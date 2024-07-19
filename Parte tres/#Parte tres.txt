@@ -1,0 +1,64 @@
+#Parte tres 
+
+1. Crear una Máquina Virtual en Compute Engine
+Paso 1: Crear la instancia
+Inicia sesión en Google Cloud Console:
+Abre tu navegador web y ve a Google Cloud Console.
+
+Selecciona o crea un proyecto:
+En la esquina superior izquierda, selecciona un proyecto existente o crea uno nuevo.
+
+Crear una instancia de Compute Engine:
+
+Ve a Compute Engine > Instancias de VM en el menú de navegación izquierdo.
+Haz clic en "Crear instancia".
+Configura la instancia:
+
+Nombre: Ingresa un nombre para tu instancia, por ejemplo, test-instance.
+Zona: Selecciona la zona que prefieras, por ejemplo, us-central1-a.
+Tipo de máquina: Elige el tipo de máquina que deseas usar, por ejemplo, n1-standard-1.
+Configura el acceso:
+
+Marca la opción "Permitir tráfico HTTP" si planeas acceder al servidor web desde fuera.
+Deja los demás valores por defecto o configúralos según tus necesidades.
+Crea la instancia: Haz clic en "Crear" para crear la instancia de Compute Engine.
+
+2. Preparar un Script para Verificar el Autoescalado
+Paso 1: Crear un script de verificación
+Conéctate a la instancia:
+
+Una vez que la instancia esté creada, haz clic en el botón de SSH en la columna "Conectar" de la lista de instancias para conectarte a ella.
+Crear y editar el script:
+
+Usa un editor de texto como nano o vi para crear un script de verificación en el directorio local de la instancia.
+
+bash
+Copiar código
+nano check_auto_scaling.sh
+Escribe el script:
+
+A continuación tienes un ejemplo básico de script que puedes usar para hacer una solicitud HTTP a la dirección IP del grupo de instancias:
+
+
+Guardar y salir: Guarda el script y cierra el editor de texto.
+
+Dar permisos de ejecución:
+
+Dale permisos de ejecución al script:
+
+bash
+Copiar código
+chmod +x check_auto_scaling.sh
+
+3. Ejecutar el Script para Verificar el Autoescalado
+Paso 1: Ejecutar el script
+Ejecuta el script:
+
+Desde la instancia de Compute Engine a la que te has conectado por SSH, ejecuta el script recién creado para verificar el funcionamiento del autoescalado:
+
+bash
+Copiar código
+./check_auto_scaling.sh
+Observa la salida:
+
+El script intentará hacer una solicitud HTTP a la dirección IP del grupo de instancias y te mostrará un mensaje indicando si el autoescalado está funcionando correctamente o si hay algún problema.
