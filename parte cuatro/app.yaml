@@ -1,0 +1,19 @@
+runtime: python39
+
+service: practica
+
+
+handlers:
+- url: /static
+  static_dir: static
+
+- url: /.*
+  script: auto
+
+# [START gae_python_mysql_env]
+env_variables:
+  CLOUDSQL_CONNECTION_NAME: crypto-truck-428120-d4:europe-southwest1:ejercicio
+  DB_USER: alumno
+  DB_PASSWORD: googlecloud
+ 
+ # [END gae_python_mysql_env]
