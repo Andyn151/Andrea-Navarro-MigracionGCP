@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Configuración de variables
-GROUP_IP="YOUR_GROUP_IP"  # Reemplazar con la dirección IP del grupo de instancias
+GROUP_IP=34.175.96.59  # Reemplazar con la dirección IP del grupo de instancias
 REQUESTS_PER_SECOND=5     # Número de solicitudes por segundo
 DURATION=3600             # Duración de la simulación en segundos (1 hora)
 END_TIME=$((SECONDS + DURATION))
